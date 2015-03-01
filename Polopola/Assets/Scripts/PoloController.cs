@@ -1,9 +1,6 @@
-﻿using System;
-using UnityEditor;
-using UnityEngine;
-using System.Collections;
+﻿using UnityEngine;
 
-public class PenguinController : MonoBehaviour
+public class PoloController : MonoBehaviour
 {
     public float moveSpeed;
     private Vector3 moveDirection;
@@ -34,15 +31,6 @@ public class PenguinController : MonoBehaviour
 
         if (Input.GetButton("Fire1"))
         {
-            if (Input.mousePosition.x > cameraWidth / 2)
-            {
-                polo = polo == Polarity.Black ? Polarity.Red : Polarity.Black;
-            }
-            else
-            {
-                pola = pola == Polarity.Black ? Polarity.Red : Polarity.Black;
-            }
-
             Vector3 moveToward;
             if (polo == pola)
             {
@@ -52,8 +40,8 @@ public class PenguinController : MonoBehaviour
             }
             else
             {
-                moveToward = new Vector3(-2000, 0, 0);
-//                moveToward = new Vector3((Camera.main.aspect * Camera.main.orthographicSize) / 2, 0, 0);
+//                moveToward = new Vector3(-2000, 0, 0);
+                moveToward = new Vector3((Camera.main.aspect * Camera.main.orthographicSize) / 2, 0, 0);
             }
             moveDirection = moveToward - new Vector3(currentPosition.x, 0, 0);
             moveDirection.z = 0;
@@ -62,6 +50,17 @@ public class PenguinController : MonoBehaviour
             transform.position = Vector3.Lerp(currentPosition, target, Time.deltaTime);
 //            var polaObject = GameObject.Find("Pola");
 //            polaObject.transform.position = Vector3.Lerp(currentPosition, target, Time.deltaTime);
+        }
+        else if (Input.GetButtonUp("Fire1"))
+        {
+            if (Input.mousePosition.x > cameraWidth / 2)
+            {
+                polo = polo == Polarity.Black ? Polarity.Red : Polarity.Black;
+            }
+            else
+            {
+                pola = pola == Polarity.Black ? Polarity.Red : Polarity.Black;
+            }
         }
     }
 }

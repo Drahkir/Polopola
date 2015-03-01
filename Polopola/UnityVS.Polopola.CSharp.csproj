@@ -60,7 +60,8 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Assets\Scripts\PenguinController.cs" />
+    <Compile Include="Assets\Scripts\PolaController.cs" />
+    <Compile Include="Assets\Scripts\PoloController.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\Standard Assets\Water (Basic)\Sources\Shaders\FX-Water Simple.shader" />
