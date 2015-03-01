@@ -1,65 +1,51 @@
 ﻿using UnityEngine;
 
-public class PoloController : MonoBehaviour
+namespace Assets.Scripts
 {
-    public float moveSpeed;
-    private Vector3 moveDirection;
-    private Polarity polo;
-    private Polarity pola;
-    private float cameraHeight;
-    private float cameraWidth;
-
-    public enum Polarity
+    public class PoloController : MonoBehaviour
     {
-        Red,
-        Black,
-    }
+        public float MoveSpeed;
+        private Vector3 _moveDirection;
+        private Polarity _polo;
+        private Polarity _pola;
+        private float _cameraWidth;
 
-    // Use this for initialization
-    void Start()
-    {
-        polo = Polarity.Red;
-        pola = Polarity.Black;
-        cameraHeight = Camera.main.pixelHeight;
-        cameraWidth = Camera.main.pixelWidth;
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        Vector3 currentPosition = transform.position;
-
-        if (Input.GetButton("Fire1"))
+        public enum Polarity
         {
-            Vector3 moveToward;
-            if (polo == pola)
-            {
-//                moveToward = new Vector3((Camera.main.aspect * Camera.main.orthographicSize) / 2, 0, 0);
-                moveToward = new Vector3(-2000, 0, 0);
-
-            }
-            else
-            {
-//                moveToward = new Vector3(-2000, 0, 0);
-                moveToward = new Vector3((Camera.main.aspect * Camera.main.orthographicSize) / 2, 0, 0);
-            }
-            moveDirection = moveToward - new Vector3(currentPosition.x, 0, 0);
-            moveDirection.z = 0;
-            moveDirection.Normalize();
-            Vector3 target = moveDirection * moveSpeed + currentPosition;
-            transform.position = Vector3.Lerp(currentPosition, target, Time.deltaTime);
-//            var polaObject = GameObject.Find("Pola");
-//            polaObject.transform.position = Vector3.Lerp(currentPosition, target, Time.deltaTime);
+            Red,
+            Black,
         }
-        else if (Input.GetButtonUp("Fire1"))
+
+        void Start()
         {
-            if (Input.mousePosition.x > cameraWidth / 2)
+            _polo = Polarity.Red;
+            _pola = Polarity.Black;
+            _cameraWidth = Camera.main.pixelWidth;
+        }
+
+        void Update()
+        {
+            var currentPosition = transform.position;
+
+            if (Input.GetButton("Fire1"))
             {
-                polo = polo == Polarity.Black ? Polarity.Red : Polarity.Black;
+                var moveToward = _polo == _pola ? new Vector3(-2000, 0, 0) : new Vector3((Camera.main.aspect * Camera.main.orthographicSize) / 2, 0, 0);
+                _moveDirection = moveToward - new Vector3(currentPosition.x, 0, 0);
+                _moveDirection.z = 0;
+                _moveDirection.Normalize();
+                var target = _moveDirection * MoveSpeed + currentPosition;
+                transform.position = Vector3.Lerp(currentPosition, target, Time.deltaTime);
             }
-            else
+            else if (Input.GetButtonUp("Fire1"))
             {
-                pola = pola == Polarity.Black ? Polarity.Red : Polarity.Black;
+                if (Input.mousePosition.x > _cameraWidth / 2)
+                {
+                    _polo = _polo == Polarity.Black ? Polarity.Red : Polarity.Black;
+                }
+                else
+                {
+                    _pola = _pola == Polarity.Black ? Polarity.Red : Polarity.Black;
+                }
             }
         }
     }
