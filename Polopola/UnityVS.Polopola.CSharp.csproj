@@ -60,6 +60,7 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\BeetusController.cs" />
     <Compile Include="Assets\Scripts\PolaController.cs" />
     <Compile Include="Assets\Scripts\PoloController.cs" />
   </ItemGroup>

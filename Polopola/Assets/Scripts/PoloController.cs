@@ -29,7 +29,8 @@ namespace Assets.Scripts
 
             if (Input.GetButton("Fire1"))
             {
-                var moveToward = _polo == _pola ? new Vector3(-2000, 0, 0) : new Vector3((Camera.main.aspect * Camera.main.orthographicSize) / 2, 0, 0);
+//                var moveToward = _polo == _pola ? new Vector3(-2000, 0, 0) : new Vector3((Camera.main.aspect * Camera.main.orthographicSize) / 2, 0, 0);
+                var moveToward = _polo == _pola ? new Vector3(_cameraWidth * -1, 0, 0) : new Vector3(0, 0, 0);
                 _moveDirection = moveToward - new Vector3(currentPosition.x, 0, 0);
                 _moveDirection.z = 0;
                 _moveDirection.Normalize();
