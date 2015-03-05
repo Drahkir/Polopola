@@ -13,5 +13,10 @@ namespace Assets.Scripts
         void Update () {
 	
         }
+
+        void OnBecameInvisible()
+        {
+            Destroy(gameObject);
+        }
     }
 }

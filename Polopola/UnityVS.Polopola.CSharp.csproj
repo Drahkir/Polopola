@@ -63,6 +63,7 @@
     <Compile Include="Assets\Scripts\BackgroundRepeater.cs" />
     <Compile Include="Assets\Scripts\BeetusController.cs" />
     <Compile Include="Assets\Scripts\CameraController.cs" />
+    <Compile Include="Assets\Scripts\EnemyCreator.cs" />
     <Compile Include="Assets\Scripts\PolaController.cs" />
     <Compile Include="Assets\Scripts\PoloController.cs" />
   </ItemGroup>
