@@ -66,6 +66,7 @@
     <Compile Include="Assets\Scripts\EnemyCreator.cs" />
     <Compile Include="Assets\Scripts\PolaController.cs" />
     <Compile Include="Assets\Scripts\PoloController.cs" />
+    <Compile Include="Assets\Scripts\UIManagerScript.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\Standard Assets\Water (Basic)\Sources\Shaders\FX-Water Simple.shader" />
