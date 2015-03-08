@@ -5,7 +5,7 @@ namespace Assets.Scripts
     public class PoloController : MonoBehaviour
     {
         public float XMoveSpeed;
-        public float YMoveSpeed;
+        private float YMoveSpeed; //This is tied to the camera move speed
         private Vector3 _moveDirection;
         private Polarity _polo;
         private Polarity _pola;
@@ -26,6 +26,7 @@ namespace Assets.Scripts
 
         void Update()
         {
+            YMoveSpeed = CameraController.Speed;
             var currentPosition = transform.position;
             if (Input.GetButton("Fire1"))
             {

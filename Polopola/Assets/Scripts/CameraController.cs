@@ -4,7 +4,7 @@ namespace Assets.Scripts
 {
     public class CameraController : MonoBehaviour
     {
-        public float Speed = 3f;
+        public static float Speed = 3f;
         private Vector3 _newPosition;
 
         // Use this for initialization
@@ -18,6 +18,7 @@ namespace Assets.Scripts
         {
             _newPosition.y += Time.deltaTime * Speed;
             transform.position = _newPosition;
+            Speed += Time.deltaTime*.1f;
         }
     }
 }
