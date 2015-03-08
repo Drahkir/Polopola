@@ -50,5 +50,13 @@ namespace Assets.Scripts
             currentPosition.y += Time.deltaTime * YMoveSpeed;
             transform.position = currentPosition;
         }
+
+        void OnTriggerEnter2D(Collider2D other)
+        {
+            if (other.CompareTag("enemy"))
+            {
+                Application.LoadLevel("GameOver");
+            }
+        }
     }
 }
