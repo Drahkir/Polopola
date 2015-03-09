@@ -50,6 +50,7 @@ namespace Assets.Scripts
             }
             currentPosition.y += Time.deltaTime * YMoveSpeed;
             transform.position = currentPosition;
+            EnforceBounds();
         }
 
         void OnTriggerEnter2D(Collider2D other)
@@ -58,6 +59,23 @@ namespace Assets.Scripts
             {
                 Application.LoadLevel("GameOver");
             }
+        }
+
+        private void EnforceBounds()
+        {
+            var newPosition = transform.position;
+            var mainCamera = Camera.main;
+            var cameraPosition = mainCamera.transform.position;
+
+            var xDist = mainCamera.aspect * mainCamera.orthographicSize;
+            var xMax = cameraPosition.x + xDist;
+            var xMin = cameraPosition.x - xDist;
+
+            if (newPosition.x < xMin || newPosition.x > xMax)
+            {
+                newPosition.x = Mathf.Clamp(newPosition.x, xMin, xMax);
+            }
+            transform.position = newPosition;
         }
     }
 }

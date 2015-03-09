@@ -18,7 +18,7 @@ namespace Assets.Scripts
         {
             _newPosition.y += Time.deltaTime * Speed;
             transform.position = _newPosition;
-            Speed += Time.deltaTime*.1f;
+            Speed += Time.deltaTime*.4f;
         }
     }
 }
