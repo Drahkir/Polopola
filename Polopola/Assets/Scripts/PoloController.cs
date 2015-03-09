@@ -73,7 +73,7 @@ namespace Assets.Scripts
             var cameraPosition = mainCamera.transform.position;
 
             var xDist = mainCamera.aspect * mainCamera.orthographicSize;
-            var xMax = cameraPosition.x + xDist;
+            var xMax = cameraPosition.x - .2f;
             var xMin = cameraPosition.x - xDist;
 
             if (newPosition.x < xMin || newPosition.x > xMax)
