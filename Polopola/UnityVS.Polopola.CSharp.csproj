@@ -63,6 +63,7 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\GameController.cs" />
     <Compile Include="Assets\Scripts\BackgroundRepeater.cs" />
     <Compile Include="Assets\Scripts\BeetusController.cs" />
     <Compile Include="Assets\Scripts\CameraController.cs" />

@@ -64,6 +64,11 @@ namespace Assets.Scripts
             {
                 Application.LoadLevel("GameOver");
             }
+            else if (other.CompareTag("fish"))
+            {
+                GameController.currentScore++;
+                Destroy(other.gameObject);
+            }
         }
 
         private void EnforceBounds()
