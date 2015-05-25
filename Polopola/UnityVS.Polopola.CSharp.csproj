@@ -52,9 +52,6 @@
     <Reference Include="UnityEngine.UI">
       <HintPath>Library\UnityAssemblies\UnityEngine.UI.dll</HintPath>
     </Reference>
-    <Reference Include="UnityEngine.UI">
-      <HintPath>Library\UnityAssemblies\UnityEngine.UI.dll</HintPath>
-    </Reference>
     <Reference Include="UnityEditor.iOS.Extensions.Xcode">
       <HintPath>Library\UnityAssemblies\UnityEditor.iOS.Extensions.Xcode.dll</HintPath>
     </Reference>
@@ -66,11 +63,13 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Assets\MenuScript.cs" />
     <Compile Include="Assets\Scripts\BackgroundRepeater.cs" />
     <Compile Include="Assets\Scripts\BeetusController.cs" />
     <Compile Include="Assets\Scripts\CameraController.cs" />
     <Compile Include="Assets\Scripts\EnemyCreator.cs" />
+    <Compile Include="Assets\Scripts\FishController.cs" />
+    <Compile Include="Assets\Scripts\FishCreator.cs" />
+    <Compile Include="Assets\Scripts\MenuScript.cs" />
     <Compile Include="Assets\Scripts\PolaController.cs" />
     <Compile Include="Assets\Scripts\PoloController.cs" />
     <Compile Include="Assets\Scripts\UIManagerScript.cs" />
