@@ -4,14 +4,14 @@ namespace Assets.Scripts
 {
     public class FishCreator : MonoBehaviour
     {
-        public float minSpawnTIme = 0.75f;
-        public float maxSpawnTime = 2f;
-        public GameObject fishPrefab;
+        public float MinSpawnTime = 0.75f;
+        public float MaxSpawnTime = 2f;
+        public GameObject FishPrefab;
 
         // Use this for initialization
         void Start()
         {
-            Invoke("SpawnFish", minSpawnTIme);
+            Invoke("SpawnFish", MinSpawnTime);
         }
 
         // Update is called once per frame
@@ -26,12 +26,12 @@ namespace Assets.Scripts
             var xMax = camera.aspect * camera.orthographicSize;
             var yMax = camera.orthographicSize;
 
-            var enemyPosition = new Vector3(Random.Range(-xMax, xMax),
+            var fishPosition = new Vector3(Random.Range(-xMax, xMax),
                           cameraPos.y + yMax + 1f,
-                          fishPrefab.transform.position.z);
+                          FishPrefab.transform.position.z);
 
-            Instantiate(fishPrefab, enemyPosition, Quaternion.identity);
-            Invoke("SpawnFish", Random.Range(minSpawnTIme, maxSpawnTime));
+            Instantiate(FishPrefab, fishPosition, Quaternion.identity);
+            Invoke("SpawnFish", Random.Range(MinSpawnTime, MaxSpawnTime));
         }
     }
 }
