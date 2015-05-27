@@ -61,7 +61,7 @@ namespace Assets.Scripts
             }
             else if (other.CompareTag("fish"))
             {
-                GameController.currentScore++;
+                ScoreController.CurrentScore++;
                 Destroy(other.gameObject);
             }
         }
